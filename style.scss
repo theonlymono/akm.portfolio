@@ -19,6 +19,7 @@ body {
     top: 0;
     left: 0;
     margin: 0;
+    width: 100%;
 }
 
 // Navigation Tools Starts
@@ -323,9 +324,16 @@ h1, h2, h3, p {
   font-style: normal;
 }
 
+.button-card-nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .button-card-container{
   display: flex;
-  gap: 50px;
+  // gap: 10px;
+  justify-content: center;
 }
 
 .button-card-container > .button-space {
@@ -334,9 +342,17 @@ h1, h2, h3, p {
 }
 
 .button-card-container > .button-space > button{
-  width: 50px;
-  height: 50px;
-  border-radius: 45px;
+  // width: 35px;
+  // height: 35px;
+  border-radius: 50%;
+  padding: 15px;
+  border: 0;
+  background-color: $primary-font-color;
+  box-shadow: 0px 10px 15px #202020;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards-container {
@@ -344,7 +360,7 @@ h1, h2, h3, p {
   justify-content: center;
   align-items: center;
   position: relative; /* Position for sliding cards */
-  overflow: hidden; /* Hide overflow for smooth transitions */
+  overflow: hidden;
   width: 80vw;
   min-height: 70vh;
 }
@@ -380,22 +396,24 @@ h1, h2, h3, p {
 
 .card-nav {
   display: flex;
-  width: 100%;
+  // width: 100%;
   justify-content: center;
-  margin: 20px;
+  // margin: 20px;
   gap: 0 10px;
 }
 
 .card-nav > .dot {
-  height: 10px;
-  width: 10px;
+  // height: 10px;
+  // width: 10px;
+  padding: 5px;
   border-radius: 45px;
-  background-color: #b0b0b0; /* Inactive color */
+  background-color: $secondary-bg-color; /* Inactive color */
   transition: background-color 0.3s ease;
 }
 
 .card-nav .dot.active {
-  background-color: #000000; /* Active color */
+  background-color: $primary-font-color; /* Active color */
+  padding: 5px;
 }
 
 .card > .preview {
@@ -452,7 +470,9 @@ h1, h2, h3, p {
 .card > .data {
   width: 50%;
   // min-width: 330px;
-  padding: 4%;;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card > .data > h1 {
@@ -488,10 +508,100 @@ h1, h2, h3, p {
   font-size: 1.1em;
   padding: 1.5rem;
   // letter-spacing: 0.1rem;
-  line-height: 1.7em;
+  line-height: 1.5em;
 }
 
-@media screen and (max-width: 830px) {
+.redirect-container {
+  flex-grow: 1; /* Take up all remaining space */
+  display: flex;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.redirect-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.redirect-center > a {
+  text-decoration-line: none;
+  text-decoration: none;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+#button-text {
+  font-family: "Lexend", sans-serif;
+}
+
+@media screen and (max-width: 737px) {
   .card > .preview {
     min-width: 260px;
     width: 100%;
@@ -516,6 +626,35 @@ h1, h2, h3, p {
     margin-top: 30px;
   }
 
+  .redirect-container {
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .interest {
+    margin-top: 100px;
+  }
+
+  .cards-container {
+    min-height: 115vh;
+  }
+
+  .button-card-container > .button-space > button {
+    padding: 10px;
+  }
+
+  .card-nav > .dot {
+    padding: 4px;
+  }
+
+  .card-nav .dot.active {
+    padding: 4px;
+  }
+
+  .button-card-nav-container {
+    gap: 0;
+  }
 }
 
 // Works Ends

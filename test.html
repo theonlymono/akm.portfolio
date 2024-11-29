@@ -3,66 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monitor with Picture</title>
+  <title>Dynamic Remaining Space</title>
   <style>
-    body {
+    .container {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-      flex-direction: column;
+      flex-direction: column; /* Stack child divs vertically */
+      height: 50vh; /* Full viewport height, adjust as needed */
+      width: 50vw;
+      border: 1px solid #000;
     }
 
-    .monitor-container {
+    .box {
+      height: 50px;
+      background-color: lightblue;
+      margin: 5px;
+    }
+
+    .remaining-space {
+      flex-grow: 1; /* Take up all remaining space */
+      background-color: lightgreen;
+      margin: 5px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .monitor {
-      width: 350px;
-      height: 200px;
-      border: 10px solid black;
-      border-radius: 10px;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .stand {
-      width: 40px;
-      height: 20px;
-      background-color: black;
-      border-radius: 3px;
-    }
-
-    .base {
-      width: 100px;
-      height: 20px;
-      background-color: black;
-      border-radius: 5px;
+      align-items: flex-end;
     }
   </style>
 </head>
 <body>
-  <div class="monitor-container">
-    <div class="monitor">
-      <div class="screen">
-        <img src="./asset/Fitfinity1.png" alt="Content on screen">
-      </div>
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="remaining-space">
+      <div style="width: 50px; height: 50px; background-color: lightyellow;"></div>
     </div>
-    <div class="stand"></div>
-    <div class="base"></div>
   </div>
+
+  
 </body>
 </html>
