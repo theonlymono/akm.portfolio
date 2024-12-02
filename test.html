@@ -3,40 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Remaining Space</title>
+  <title>Document</title>
   <style>
-    .container {
-      display: flex;
-      flex-direction: column; /* Stack child divs vertically */
-      height: 50vh; /* Full viewport height, adjust as needed */
-      width: 50vw;
-      border: 1px solid #000;
-    }
-
-    .box {
-      height: 50px;
-      background-color: lightblue;
-      margin: 5px;
-    }
-
-    .remaining-space {
-      flex-grow: 1; /* Take up all remaining space */
-      background-color: lightgreen;
-      margin: 5px;
-      display: flex;
-      align-items: flex-end;
-    }
+    .home__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 260px;
+}
+.home__blob {
+  fill: var(--first-color);
+}
+.home__blob-img {
+  width: 360px;
+  object-fit: fill;
+}
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="remaining-space">
-      <div style="width: 50px; height: 50px; background-color: lightyellow;"></div>
-    </div>
-  </div>
-
-  
+  <div class="home__img">
+    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <mask id="mask0" mask-type="alpha">
+            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+        </mask>
+        <g mask="url(#mask0)">
+            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+            <image class="home__blob-img" x="50" y="60" href="asset/Fitfinity1.png"/>
+        </g>
+    </svg>
+</div>
 </body>
 </html>

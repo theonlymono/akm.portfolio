@@ -9,6 +9,8 @@
     <!-- Link to Icons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+    <!-- Link to Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" >
     <!-- Link to Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,43 +22,84 @@
 <body>
     
     <!-- Main Content Starts -->
+        
+        <!-- Back to Top Starts -->
+        <button id="back-to-top" class="back-to-top-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 15l-7-7-7 7" />
+            </svg>
+        </button>
+        <!-- Back to Top Ends -->
 
         <!-- Navigation Tools Starts -->
-        
-        <div class="navbar">
+
+        <section class="navbar">
             <header class="header">
                 <div class="burger">
-                  <div class="burger__patty"></div>
-                  <div class="burger__patty"></div>
-                  <div class="burger__patty"></div>
+                    <div class="burger__patty"></div>
+                    <div class="burger__patty"></div>
+                    <div class="burger__patty"></div>
                 </div>
-              
+                
                 <nav class="menu">
-                  <div class="menu__brand">
-                    <a href=""><div class="logo"></div></a>
-                  </div>
-                  <ul class="menu__list">
-                    <li class="menu__item"><a href="" class="menu__link">Work</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">About</a></li>
-                    <li class="menu__item">
-                      <a href="https://twitter.com/ettrics" target="_blank" class="menu__link menu__link--social"><i class="fa fa-twitter"></i></a>
+                    <div class="menu__brand">
+                    <!-- <a href="">
+                        <div class="logo"></div>
+                    </a> -->
+                    <div class="menu-profile">
+                        <img src="asset/akm3.jpg" alt="">
+                    </div>
+                    </div>
+                    <ul class="menu__list">
+                    <li class="menu__item"><a href="#intro" class="menu__link">Introduction</a></li>
+                    <li class="menu__item"><a href="#skills" class="menu__link">Skills</a></li>
+                    <li class="menu__item"><a href="#works" class="menu__link">Works</a></li>
+                    <li class="menu__item"><a href="#contact" class="menu__link">Contact</a></li>
+                    <!-- <li class="menu__item">
+                        <a href="https://twitter.com/ettrics" target="_blank" class="menu__link menu__link--social"><i class="fa fa-twitter"></i></a>
                     </li>
                     <li class="menu__item">
-                      <a href="https://dribbble.com/ettrics" target="_blank" class="menu__link menu__link--social">
+                        <a href="https://dribbble.com/ettrics" target="_blank" class="menu__link menu__link--social">
                         <i class="fa fa-dribbble"></i></a>
-                    </li>
-                  </ul>
+                    </li> -->
+                    </ul>
                 </nav>
-              </header>
-        </div>   
+                </header>
+            </section>   
 
         <!-- Navigation Tools Ends -->
+
+        <!-- Introduction starts -->
+
+        <section class="intro" id="intro">
+            <div class="intro-img">
+                <img src="asset/akm3.jpg" alt="">
+            </div>
+        
+            <div class="intro-content">
+                <h1>Hi, It's <span>Aung Kaung Myat</span></h1>
+                <h3 class="typing-text"><span></span></h3>
+                <p>A young tech enthusiast, also a CS Student currently enhancing his skills in frontend development and UI/UX design while casually doing photography as a hobby in his free time and is always eager to explore new things which pique his interest.</p>
+
+                <div class="social-icon">
+                    <a href="https://github.com/theonlymono" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/ur_neighborhood_lulu?igsh=MWZzM2lwZTEwMmdwZw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/theonlymono?mibextid=ZbWKwL" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+
+                <a href="#works" class="btn">Projects</a>
+                <a href="#contact" class="btn">Contact</a>
+
+            </div>
+        </section>
+
+        <!-- Introduction ends -->
 
         <!-- Languages and Frameworks Starts -->
 
 
-        <div class="tech-Arsenal">
-            <h1>My Tech Arsenal</h1>
+        <section class="tech-Arsenal" id="skills">
+            <h1>My <span class="yellow">Tech</span> Arsenal</h1>
             
             <p>A collection of tools, languages, and frameworks that I’ve mastered to build engaging, user-friendly, and visually stunning digital experiences. From foundational web technologies like HTML, CSS, and JavaScript to modern design tools like React, Figma and Spline. These skills empower me to bring ideas to life. Here are some of the technologies I use in my projects.</p>
                 
@@ -204,14 +247,14 @@
                     </li> -->
                 </ul>
             </div>
-        </div>
+        </section>
         <!-- Languages and Frameworks Ends -->
         
         <!-- Works Division Starts -->
 
-        <div class="works">
+        <section class="works" id="works">
             <div class="works-container">
-                <h1>Finished & Working Projects</h1>
+                <h1>Finished & Working <span class="yellow">Projects</span></h1>
                 
                 <div class="button-card-nav-container">
                     <div class="button-card-container">
@@ -246,7 +289,7 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/FitFinity-GymWebsite.git">                                    
+                                            <a href="https://github.com/theonlymono/FitFinity-GymWebsite.git" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -284,7 +327,7 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/FitfinityHealthcareWebsiteJ2EE.git">                                    
+                                            <a href="https://github.com/theonlymono/FitfinityHealthcareWebsiteJ2EE.git" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -322,7 +365,7 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/Fitfinity-MedAI-Diagnostic-Bot-Web-Application.git">                                    
+                                            <a href="https://github.com/theonlymono/Fitfinity-MedAI-Diagnostic-Bot-Web-Application.git" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -360,7 +403,7 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/ProLearn-Virtual-Learning-Environment.git">                                    
+                                            <a href="https://github.com/theonlymono/ProLearn-Virtual-Learning-Environment.git" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -398,7 +441,7 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/SudokuGame.git">                                    
+                                            <a href="https://github.com/theonlymono/SudokuGame.git" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -436,11 +479,11 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/Sudoku-Auto-Solver-v1.1-Normal-Edition.git" title="Normal Edition">                                    
+                                            <a href="https://github.com/theonlymono/Sudoku-Auto-Solver-v1.1-Normal-Edition.git" title="Normal Edition" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
 
-                                            <a href="https://github.com/theonlymono/Sudoku-Auto-Solver-v1.0-Speed-Edition.git" title="Speed Edition">                                    
+                                            <a href="https://github.com/theonlymono/Sudoku-Auto-Solver-v1.0-Speed-Edition.git" title="Speed Edition" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -478,7 +521,7 @@
     
                                     <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/ParkingPanicGame.git">                                    
+                                            <a href="https://github.com/theonlymono/ParkingPanicGame.git" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -516,7 +559,7 @@
     
                                     <!-- <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/FitFinity-GymWebsite.git">                                    
+                                            <a href="" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -554,7 +597,7 @@
     
                                     <!-- <div class="redirect-container">
                                         <div class="redirect-center">
-                                            <a href="https://github.com/theonlymono/FitFinity-GymWebsite.git">                                    
+                                            <a href="" target="_blank">                                    
                                                 <i style="font-size: 52px; color: #f1f1f1;" class="devicon-github-original"></i>
                                             </a>
     
@@ -592,13 +635,13 @@
 
                 
             </div>
-        </div>
+        </section>
 
         <!-- Works Division Ends -->
 
         <!-- Interest Division starts -->
 
-        <div class="interest">
+        <section class="interest">
             
             <div class="interest-container">
 
@@ -636,13 +679,13 @@
                     <span class="interest-label">HOTPOT</span>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Interest Division Ends -->
 
         <!-- Contact Me Starts -->
         
-        <div class="contact-me">
+        <section class="contact" id="contact">
             
             <div class="background">
                 <div class="container">
@@ -694,9 +737,18 @@
                 </div>
               </div>
               
-        </div>
+        </section>
 
         <!-- Contact Me Ends -->
+
+        <!-- Footer Starts -->
+        
+        <section class="footer">
+
+        </section>
+
+        <!-- Footer Ends -->
+
     <!-- Main Content Ends -->
     <script src="interactive.js"></script>
 </body>

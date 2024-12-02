@@ -1,59 +1,120 @@
+// Back to top starts
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+if (window.scrollY > 150) {
+backToTopButton.style.opacity = '1';
+backToTopButton.style.visibility = 'visible';
+} else {
+backToTopButton.style.opacity = '0';
+backToTopButton.style.visibility = 'hidden';
+}
+});
+
+backToTopButton.addEventListener('click', () => {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+// Back to top ends
+
 // Navbar Starts
 
 (function() {
-  
-    var Menu = (function() {
-      var burger = document.querySelector('.burger');
-      var menu = document.querySelector('.menu');
-      var menuList = document.querySelector('.menu__list');
-      var brand = document.querySelector('.menu__brand');
-      var menuItems = document.querySelectorAll('.menu__item');
-      
-      var active = false;
-      
-      var toggleMenu = function() {
-        if (!active) {
-          menu.classList.add('menu--active');
-          menuList.classList.add('menu__list--active');
-          brand.classList.add('menu__brand--active');
-          burger.classList.add('burger--close');
-          for (var i = 0, ii = menuItems.length; i < ii; i++) {
-            menuItems[i].classList.add('menu__item--active');
-          }
-          
-          active = true;
-        } else {
-          menu.classList.remove('menu--active');
-          menuList.classList.remove('menu__list--active');
-          brand.classList.remove('menu__brand--active');
-          burger.classList.remove('burger--close');
-          for (var i = 0, ii = menuItems.length; i < ii; i++) {
-            menuItems[i].classList.remove('menu__item--active');
-          }
-          
-          active = false;
-        }
-      };
-      
-      var bindActions = function() {
-        burger.addEventListener('click', toggleMenu, false);
-      };
-      
-      var init = function() {
-        bindActions();
-      };
-      
-      return {
-        init: init
-      };
-      
-    }());
+  var Menu = (function() {
+    var burger = document.querySelector('.burger');
+    var menu = document.querySelector('.menu');
+    var menuList = document.querySelector('.menu__list');
+    var brand = document.querySelector('.menu__brand');
+    var menuItems = document.querySelectorAll('.menu__item');
     
-    Menu.init();
+    var active = false;
+    
+    // Toggle menu open and closed
+    var toggleMenu = function() {
+      if (!active) {
+        menu.classList.add('menu--active');
+        menuList.classList.add('menu__list--active');
+        brand.classList.add('menu__brand--active');
+        burger.classList.add('burger--close');
+        for (var i = 0, ii = menuItems.length; i < ii; i++) {
+          menuItems[i].classList.add('menu__item--active');
+        }
+        
+        active = true;
+      } else {
+        menu.classList.remove('menu--active');
+        menuList.classList.remove('menu__list--active');
+        brand.classList.remove('menu__brand--active');
+        burger.classList.remove('burger--close');
+        for (var i = 0, ii = menuItems.length; i < ii; i++) {
+          menuItems[i].classList.remove('menu__item--active');
+        }
+        
+        active = false;
+      }
+    };
+    
+    // Smooth scroll and close menu on link click
+    var scrollToSection = function(e) {
+      e.preventDefault();  // Prevent the default anchor click behavior
+      
+      var target = document.querySelector(this.getAttribute('href'));
+      
+      // Smooth scroll to the target section
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Close the menu
+      if (active) {
+        toggleMenu();
+      }
+    };
+    
+    var bindActions = function() {
+      burger.addEventListener('click', toggleMenu, false);
+      
+      // Add click event to each menu link
+      var menuLinks = document.querySelectorAll('.menu__link');
+      menuLinks.forEach(function(link) {
+        link.addEventListener('click', scrollToSection, false);
+      });
+    };
+    
+    var init = function() {
+      bindActions();
+    };
+    
+    return {
+      init: init
+    };
     
   }());
+  
+  Menu.init();
+})();
+
 
   // Navbar Ends
+
+  // Intro Starts
+  
+  // Add smooth scroll behavior to 'Projects' and 'Contact' buttons
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      document.getElementById(targetId).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+  
+  // Intro Ends
 
   // Works Starts
 
